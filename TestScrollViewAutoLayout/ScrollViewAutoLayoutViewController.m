@@ -8,8 +8,9 @@
 
 #import "ScrollViewAutoLayoutViewController.h"
 
-@interface ScrollViewAutoLayoutViewController ()
-
+@interface ScrollViewAutoLayoutViewController () <UITextViewDelegate>
+@property (assign, nonatomic) NSInteger constraintBottomScrollViewConstant;
+@property (weak, nonatomic) UITextView *editingTextView;
 @end
 
 @implementation ScrollViewAutoLayoutViewController
@@ -33,12 +34,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self setupNotification];
+    [self setupGesture];
     [self setupText];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
 }
 
 /*
@@ -51,18 +58,52 @@
 }
 */
 
+#pragma mark - Notification
+- (void) setupNotification {
+    [self setConstraintBottomScrollViewConstant: self.constraintBottomScrollView.constant];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(keyboardWillShow:) name: UIKeyboardDidShowNotification object: nil];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(keyboardWillHide:) name: UIKeyboardDidHideNotification object: nil];
+}
+- (void) keyboardWillShow: (NSNotification *) notification {
+    NSDictionary *info = [notification userInfo];
+    NSValue *keyboardBegin = [info valueForKey: UIKeyboardFrameBeginUserInfoKey];
+    CGRect keyboardFrameBegin = [keyboardBegin CGRectValue];
+    
+    [self.constraintBottomScrollView setConstant: keyboardFrameBegin.size.height];
+    [self.view layoutIfNeeded];
+    CGRect frame = [self.editingTextView convertRect: self.editingTextView.frame toView: self.scrollView];
+    [self.scrollView scrollRectToVisible: frame animated: YES];
+}
+- (void) keyboardWillHide: (NSNotification *) notification {
+    [self setEditingTextView: nil];
+    [self.constraintBottomScrollView setConstant: self.constraintBottomScrollViewConstant];
+    [self.view layoutIfNeeded];
+}
+
+#pragma mark - Gesture
+- (void) setupGesture {
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(handleTap:)];
+    [gesture setNumberOfTapsRequired: 1];
+    [self.view addGestureRecognizer: gesture];
+    [self.scrollView setKeyboardDismissMode: UIScrollViewKeyboardDismissModeInteractive];
+}
+- (void) handleTap: (UITapGestureRecognizer *) gesture {
+    [self.view endEditing: YES];
+}
+
+#pragma mark - UITextViewDelegate
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    [self setEditingTextView: textView];
+}
+
+#pragma mark - UI
 - (void) setupText {
-    NSString *str = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz0987654321";
+    NSString *str = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ\n1234567890\nabcdefghijklmnopqrstuvwxyz\n0987654321";
     [self.labelValue1 setText: str];
-    str = [str stringByAppendingFormat: @"\n%@", str];
     [self.labelValue3 setText: str];
-    str = [str stringByAppendingFormat: @"\n%@", str];
     [self.labelValue5 setText: str];
-    str = [str stringByAppendingFormat: @"\n%@", str];
     [self.labelValue7 setText: str];
-    str = [str stringByAppendingFormat: @"\n%@", str];
     [self.labelValue9 setText: str];
-    str = [str stringByAppendingFormat: @"\n%@", str];
     [self.labelValue11 setText: str];
     
     [self.textViewValue2 setText: self.labelValue1.text];

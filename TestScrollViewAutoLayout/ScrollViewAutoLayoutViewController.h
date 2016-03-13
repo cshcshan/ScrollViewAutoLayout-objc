@@ -21,5 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *textViewValue10;
 @property (weak, nonatomic) IBOutlet UILabel *labelValue11;
 @property (weak, nonatomic) IBOutlet UITextView *textViewValue12;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintBottomScrollView;
 
 @end
