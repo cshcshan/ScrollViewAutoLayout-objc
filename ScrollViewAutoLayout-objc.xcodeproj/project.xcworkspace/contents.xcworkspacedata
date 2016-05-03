@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TestScrollViewAutoLayout.xcodeproj">
+      location = "self:/Users/Han/repos/ScrollViewAutoLayout-objc/ScrollViewAutoLayout-objc.xcodeproj">
    </FileRef>
 </Workspace>

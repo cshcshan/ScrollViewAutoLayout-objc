@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		33B635061C8FB4AB004BE7EC /* TestScrollViewAutoLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestScrollViewAutoLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33B635061C8FB4AB004BE7EC /* ScrollViewAutoLayout-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScrollViewAutoLayout-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33B6350A1C8FB4AB004BE7EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33B6350C1C8FB4AB004BE7EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		33B6350D1C8FB4AB004BE7EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		33B635071C8FB4AB004BE7EC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33B635061C8FB4AB004BE7EC /* TestScrollViewAutoLayout.app */,
+				33B635061C8FB4AB004BE7EC /* ScrollViewAutoLayout-objc.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,7 +76,8 @@
 				33B6351A1C8FB4AB004BE7EC /* Info.plist */,
 				33B635091C8FB4AB004BE7EC /* Supporting Files */,
 			);
-			path = TestScrollViewAutoLayout;
+			name = TestScrollViewAutoLayout;
+			path = "ScrollViewAutoLayout-objc";
 			sourceTree = "<group>";
 		};
 		33B635091C8FB4AB004BE7EC /* Supporting Files */ = {
@@ -90,9 +91,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		33B635051C8FB4AB004BE7EC /* TestScrollViewAutoLayout */ = {
+		33B635051C8FB4AB004BE7EC /* ScrollViewAutoLayout-objc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 33B6351D1C8FB4AB004BE7EC /* Build configuration list for PBXNativeTarget "TestScrollViewAutoLayout" */;
+			buildConfigurationList = 33B6351D1C8FB4AB004BE7EC /* Build configuration list for PBXNativeTarget "ScrollViewAutoLayout-objc" */;
 			buildPhases = (
 				33B635021C8FB4AB004BE7EC /* Sources */,
 				33B635031C8FB4AB004BE7EC /* Frameworks */,
@@ -102,9 +103,9 @@
 			);
 			dependencies = (
 			);
-			name = TestScrollViewAutoLayout;
+			name = "ScrollViewAutoLayout-objc";
 			productName = TestScrollViewAutoLayout;
-			productReference = 33B635061C8FB4AB004BE7EC /* TestScrollViewAutoLayout.app */;
+			productReference = 33B635061C8FB4AB004BE7EC /* ScrollViewAutoLayout-objc.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -121,7 +122,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 33B635011C8FB4AB004BE7EC /* Build configuration list for PBXProject "TestScrollViewAutoLayout" */;
+			buildConfigurationList = 33B635011C8FB4AB004BE7EC /* Build configuration list for PBXProject "ScrollViewAutoLayout-objc" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -134,7 +135,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				33B635051C8FB4AB004BE7EC /* TestScrollViewAutoLayout */,
+				33B635051C8FB4AB004BE7EC /* ScrollViewAutoLayout-objc */,
 			);
 		};
 /* End PBXProject section */
@@ -273,11 +274,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TestScrollViewAutoLayout/Info.plist;
+				INFOPLIST_FILE = "ScrollViewAutoLayout-objc/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cshan.TestScrollViewAutoLayout;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cshan.ScrollViewAutoLayout-objc";
+				PRODUCT_NAME = "ScrollViewAutoLayout-objc";
 			};
 			name = Debug;
 		};
@@ -285,18 +286,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TestScrollViewAutoLayout/Info.plist;
+				INFOPLIST_FILE = "ScrollViewAutoLayout-objc/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cshan.TestScrollViewAutoLayout;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cshan.ScrollViewAutoLayout-objc";
+				PRODUCT_NAME = "ScrollViewAutoLayout-objc";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		33B635011C8FB4AB004BE7EC /* Build configuration list for PBXProject "TestScrollViewAutoLayout" */ = {
+		33B635011C8FB4AB004BE7EC /* Build configuration list for PBXProject "ScrollViewAutoLayout-objc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33B6351B1C8FB4AB004BE7EC /* Debug */,
@@ -305,7 +306,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		33B6351D1C8FB4AB004BE7EC /* Build configuration list for PBXNativeTarget "TestScrollViewAutoLayout" */ = {
+		33B6351D1C8FB4AB004BE7EC /* Build configuration list for PBXNativeTarget "ScrollViewAutoLayout-objc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33B6351E1C8FB4AB004BE7EC /* Debug */,

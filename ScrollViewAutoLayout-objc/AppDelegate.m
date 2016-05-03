@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  TestScrollViewAutoLayout
+//  ScrollViewAutoLayout-objc
 //
 //  Created by Han Chen on 2016/3/9.
 //  Copyright © 2016年 Han Chen. All rights reserved.
